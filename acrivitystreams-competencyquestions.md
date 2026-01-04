@@ -251,16 +251,29 @@ Some [competency questions](https://doi.org/10.1007/978-3-031-47262-6_3) for a k
       <td rowspan="4"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-move">Move definition</a>.</td>
     </tr>
     <tr>
-      <th name="CQ48"><a href="#CQ48">CQ48</a></th>
+      <th name="CQ50"><a href="#CQ50">CQ50</a></th>
       <td>What objects were moved by a given actor from a specific origin to a specific target?</td>
     </tr>
     <tr>
-      <th name="CQ48"><a href="#CQ48">CQ48</a></th>
+      <th name="CQ51"><a href="#CQ51">CQ51</a></th>
       <td>What origins a specific object was moved from by a given actor and to a specific target?</td>
     </tr>
     <tr>
-      <th name="CQ48"><a href="#CQ48">CQ48</a></th>
+      <th name="CQ52"><a href="#CQ52">CQ52</a></th>
       <td>What targets a specific object was moved to by a given actor from a specific origin?</td>
+    </tr>
+    <tr>
+      <th name="CQ53"><a href="#CQ53">CQ53</a></th>
+      <td>Which actors traveled from a specific origin to a specific target?</td>
+      <td rowspan="4"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-travel">Travel definition</a>.</td>
+    </tr>
+    <tr>
+      <th name="CQ54"><a href="#CQ54">CQ54</a></th>
+      <td>What origins a specific agent has traveled from to a specific target?</td>
+    </tr>
+    <tr>
+      <th name="CQ55"><a href="#CQ55">CQ55</a></th>
+      <td>What targets a specific actor has traveled to from a specific origin?</td>
     </tr>
     
   </tbody>
