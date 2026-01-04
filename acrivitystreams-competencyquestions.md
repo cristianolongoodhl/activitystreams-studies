@@ -314,10 +314,29 @@ Some [competency questions](https://doi.org/10.1007/978-3-031-47262-6_3) for a k
       <td>What objects were disliked by a given actor?</td>
     </tr>
     <tr>
-      <th name="CQ63"><a href="#CQ63">CQ63</a></th>
+      <th name="CQ65"><a href="#CQ65">CQ65</a></th>
       <td>What are the possible answers to a given question?</td>
-      <td rowspan="2"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-question">Question definition</a>.</td>
+      <td><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-question">Question definition</a>.</td>
     </tr>
-
+    <tr>
+      <th colspan="3">Links</th>
+    </tr>
+    <tr>
+      <th name="CQ66"><a href="#CQ66">CQ66</a></th>
+      <td>What is the IRI a link refers to?</td>
+      <td><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-link">Link definition</a>.</td>
+    </tr>
+    <tr>
+      <th colspan="3">Objects</th>
+    </tr>
+    <tr>
+      <th name="CQ67"><a href="#CQ67">CQ67</a></th>
+      <td>Which objects are related to a specific subject?</td>
+      <td rowspan="2"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-relationship">Relationship definition</a>.</td>
+    </tr>
+    <tr>
+      <th name="CQ68"><a href="#CQ67">CQ68</a></th>
+      <td>Which subjects are related to a specific object?</td>
+    </tr>
   </tbody>
 </table>
