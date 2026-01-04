@@ -139,6 +139,15 @@ Some [competency questions](https://doi.org/10.1007/978-3-031-47262-6_3) for a k
       <th name="CQ26"><a href="#CQ26">CQ26</a></th>
       <td>What objects were joined by a given actor?</td>
     </tr>
+    <tr>
+      <th name="CQ27"><a href="#CQ27">CQ27</a></th>
+      <td>Which actors left a given object?</td>
+      <td rowspan="2"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-left">Left definition</a>.</td>
+    </tr>
+    <tr>
+      <th name="CQ26"><a href="#CQ26">CQ26</a></th>
+      <td>What objects were left by a given actor?</td>
+    </tr>
 
   </tbody>
 </table>
