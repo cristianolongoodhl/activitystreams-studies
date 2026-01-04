@@ -200,6 +200,15 @@ Some [competency questions](https://doi.org/10.1007/978-3-031-47262-6_3) for a k
       <th name="CQ38"><a href="#CQ38">CQ38</a></th>
       <td>What objects were removed by a given actor?</td>
     </tr>
+    <tr>
+      <th name="CQ39"><a href="#CQ39">CQ39</a></th>
+      <td>Which actors have undone a given object?</td>
+      <td rowspan="2"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-remove">Remove definition</a>.</td>
+    </tr>
+    <tr>
+      <th name="CQ40"><a href="#CQ40">CQ40</a></th>
+      <td>What objects have been undone by a given actor?</td>
+    </tr>
     
   </tbody>
 </table>
