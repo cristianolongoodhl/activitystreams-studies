@@ -1,0 +1,415 @@
+@prefix : <https://www.w3.org/ns/activitystreams#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://www.w3.org/ns/activitystreams#> .
+
+<https://www.opendatahacklab.org/as-exh/as-exh.ttl> rdf:type owl:Ontology ;
+                                                     owl:imports <https://www.w3.org/ns/activitystreams-owl>.
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://www.w3.org/ns/activitystreams#current
+:current rdfs:subPropertyOf [ owl:inverseOf :partOf
+                            ] .
+
+
+###  https://www.w3.org/ns/activitystreams#first
+:first rdfs:subPropertyOf [ owl:inverseOf :partOf
+                          ] .
+
+
+###  https://www.w3.org/ns/activitystreams#items
+:items owl:propertyChainAxiom ( [ owl:inverseOf :partOf
+                                ]
+                                :items
+                              ) .
+
+
+###  https://www.w3.org/ns/activitystreams#last
+:last rdfs:subPropertyOf [ owl:inverseOf :partOf
+                         ] .
+
+
+###  https://www.w3.org/ns/activitystreams#next
+:next owl:inverseOf :prev .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://www.w3.org/ns/activitystreams#Accept
+:Accept rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :actor ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :object ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Add
+:Add rdf:type owl:Class ;
+     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                       owl:onProperty :actor ;
+                       owl:someValuesFrom owl:Thing
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :object ;
+                       owl:someValuesFrom owl:Thing
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :target ;
+                       owl:someValuesFrom owl:Thing
+                     ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Announce
+:Announce rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :actor ;
+                            owl:someValuesFrom owl:Thing
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :object ;
+                            owl:someValuesFrom owl:Thing
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :target ;
+                            owl:someValuesFrom owl:Thing
+                          ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Arrive
+:Arrive rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :actor ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :location ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Collection
+:Collection rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :first ;
+                              owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :prev ;
+                                                  owl:allValuesFrom owl:Nothing
+                                                ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :last ;
+                              owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :next ;
+                                                  owl:allValuesFrom owl:Nothing
+                                                ]
+                            ] ;
+            owl:disjointWith :Person ,
+                             :Service .
+
+
+###  https://www.w3.org/ns/activitystreams#Create
+:Create rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :actor ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :object ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Delete
+:Delete rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :actor ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :object ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Dislike
+:Dislike rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :actor ;
+                           owl:someValuesFrom owl:Thing
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :object ;
+                           owl:someValuesFrom owl:Thing
+                         ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Flag
+:Flag rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :actor ;
+                        owl:someValuesFrom owl:Thing
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :object ;
+                        owl:someValuesFrom owl:Thing
+                      ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Follow
+:Follow rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :actor ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :object ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Group
+:Group rdf:type owl:Class ;
+       owl:disjointWith :Person ,
+                        :Service .
+
+
+###  https://www.w3.org/ns/activitystreams#Ignore
+:Ignore rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :actor ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :object ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Invite
+:Invite rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :target ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Join
+:Join rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :actor ;
+                        owl:someValuesFrom owl:Thing
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :object ;
+                        owl:someValuesFrom owl:Thing
+                      ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Leave
+:Leave rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :actor ;
+                         owl:someValuesFrom owl:Thing
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :object ;
+                         owl:someValuesFrom owl:Thing
+                       ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Like
+:Like rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :actor ;
+                        owl:someValuesFrom owl:Thing
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :object ;
+                        owl:someValuesFrom owl:Thing
+                      ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Listen
+:Listen rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :actor ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :object ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Move
+:Move rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :actor ;
+                        owl:someValuesFrom owl:Thing
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :object ;
+                        owl:someValuesFrom owl:Thing
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :origin ;
+                        owl:someValuesFrom owl:Thing
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :target ;
+                        owl:someValuesFrom owl:Thing
+                      ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Offer
+:Offer rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :actor ;
+                         owl:someValuesFrom owl:Thing
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :object ;
+                         owl:someValuesFrom owl:Thing
+                       ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Organization
+:Organization rdf:type owl:Class ;
+              owl:disjointWith :Person ,
+                               :Service .
+
+
+###  https://www.w3.org/ns/activitystreams#Person
+:Person rdf:type owl:Class ;
+        owl:disjointWith :Service .
+
+
+###  https://www.w3.org/ns/activitystreams#Question
+:Question rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Class ;
+                            owl:complementOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :anyOf ;
+                                                                      owl:someValuesFrom owl:Thing
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :oneOf ;
+                                                                      owl:someValuesFrom owl:Thing
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ]
+                          ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Read
+:Read rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :actor ;
+                        owl:someValuesFrom owl:Thing
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :object ;
+                        owl:someValuesFrom owl:Thing
+                      ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Reject
+:Reject rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :actor ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :object ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Relationship
+:Relationship rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :object ;
+                                owl:someValuesFrom owl:Thing
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :subject ;
+                                owl:someValuesFrom owl:Thing
+                              ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Remove
+:Remove rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :actor ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :object ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Travel
+:Travel rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :actor ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :origin ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :target ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Undo
+:Undo rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :actor ;
+                        owl:someValuesFrom owl:Thing
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :object ;
+                        owl:someValuesFrom owl:Thing
+                      ] .
+
+
+###  https://www.w3.org/ns/activitystreams#Update
+:Update rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :actor ;
+                          owl:someValuesFrom owl:Thing
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :object ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+###  https://www.w3.org/ns/activitystreams#View
+:View rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :actor ;
+                        owl:someValuesFrom owl:Thing
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :object ;
+                        owl:someValuesFrom owl:Thing
+                      ] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

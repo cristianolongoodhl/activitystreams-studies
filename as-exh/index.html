@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:og="http://ogp.me/ns#">
+<head>
+	<title>Additional Constraints for Activity Streams</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../src/styles/bwlight.css">
+	<script src="logaccess.php?resource=https%3A%2F%2Fwww.opendatahacklab.org%2Fas-exh%2F"></script>
+</head>
+<body>
+	<h1>Some Additional Constraints for Activity Streams</h1>
+	<p><a href="as-exh.ttl">as-exh</a> is an extension of the <a href="https://www.w3.org/ns/activitystreams-owl">OWL
+	encoding of Activity Streams</a>. As-exh provides additional constraints 
+	aiming to provide a precise encoding of the descriptions provided in natural language in 
+	the <a href="https://www.w3.org/TR/activitystreams-vocabulary/">Activity Vocabulary</a>.  	
+	</p>
+	
+	<p>Try out the <em>consequences</em> of these proposed constraints by running a reasoner
+	on the following examples.</p>
+	<ol>
+		<li><a href="examples/fig1.ttl">Page items are items of the parent collection.</a></li>
+		<li><a href="examples/fig2.ttl">Collection pages may be themselves paged.</a></li>
+		<li><a href="examples/fig3.ttl">The first, current and last page of a collection are parts of the collection.</a></li>
+		<li><a href="examples/fig4.ttl">Prev and next are each other inverse.</a></li>
+		<li><a href="examples/fig5.ttl">Not Consistent: the first page of a collection must have no predecessor.</a></li>
+		<li><a href="examples/fig6.ttl">Not Consistent: the last page of a collection must have no successor.</a></li>
+		<li><a href="examples/fig7.ttl">Not consistent: Question objects can't have both anyOf and oneOf.</a></li>
+	</ol>
+</body>
+</html>
