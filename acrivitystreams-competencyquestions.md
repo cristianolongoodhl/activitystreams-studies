@@ -218,6 +218,24 @@ Some [competency questions](https://doi.org/10.1007/978-3-031-47262-6_3) for a k
       <th name="CQ42"><a href="#CQ42">CQ42</a></th>
       <td>What objects were updated by a given actor?</td>
     </tr>
+    <tr>
+      <th name="CQ43"><a href="#CQ43">CQ43</a></th>
+      <td>Which actors viewed a given object?</td>
+      <td rowspan="2"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-view">View definition</a>.</td>
+    </tr>
+    <tr>
+      <th name="CQ44"><a href="#CQ44">CQ44</a></th>
+      <td>What objects were viewed by a given actor?</td>
+    </tr>
+    <tr>
+      <th name="CQ45"><a href="#CQ45">CQ45</a></th>
+      <td>Which actors have listened a given object?</td>
+      <td rowspan="2"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-listen">Listen definition</a>.</td>
+    </tr>
+    <tr>
+      <th name="CQ46"><a href="#CQ46">CQ46</a></th>
+      <td>What objects were liestened by a given actor?</td>
+    </tr>
     
   </tbody>
 </table>
