@@ -265,7 +265,7 @@ Some [competency questions](https://doi.org/10.1007/978-3-031-47262-6_3) for a k
     <tr>
       <th name="CQ53"><a href="#CQ53">CQ53</a></th>
       <td>Which actors traveled from a specific origin to a specific target?</td>
-      <td rowspan="4"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-travel">Travel definition</a>.</td>
+      <td rowspan="3"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-travel">Travel definition</a>.</td>
     </tr>
     <tr>
       <th name="CQ54"><a href="#CQ54">CQ54</a></th>
@@ -274,6 +274,19 @@ Some [competency questions](https://doi.org/10.1007/978-3-031-47262-6_3) for a k
     <tr>
       <th name="CQ55"><a href="#CQ55">CQ55</a></th>
       <td>What targets a specific actor has traveled to from a specific origin?</td>
+    </tr>
+    <tr>
+      <th name="CQ56"><a href="#CQ56">CQ56</a></th>
+      <td>Which actors announced a given object to a specific target?</td>
+      <td rowspan="3"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-announce">Announce definition</a>.</td>
+    </tr>
+    <tr>
+      <th name="CQ57"><a href="#CQ57">CQ57</a></th>
+      <td>What objects were announced by a given actor to a specific target?</td>
+    </tr>
+    <tr>
+      <th name="CQ58"><a href="#CQ58">CQ58</a></th>
+      <td>What targets were announced about a specific object by a given actor?</td>
     </tr>
     
   </tbody>
