@@ -167,6 +167,19 @@ Some [competency questions](https://doi.org/10.1007/978-3-031-47262-6_3) for a k
       <td>What objects were liked by a given actor?</td>
     </tr>
     <!-- TODO TARGET -->
+    <tr>
+      <th name="CQ32"><a href="#CQ32">CQ32</a></th>
+      <td>Which actors invited a given target for a specific object?</td>
+      <td rowspan="2"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-invite">Invite definition</a>.</td>
+    </tr>
+    <tr>
+      <th name="CQ33"><a href="#CQ33">CQ33</a></th>
+      <td>What objects a given actor invited a specific target for?</td>
+    </tr>
+    <tr>
+      <th name="CQ34"><a href="#CQ34">CQ34</a></th>
+      <td>What targets have been ivited for a given object by a specific actor?</td>
+    </tr>
 
   </tbody>
 </table>
