@@ -70,9 +70,29 @@ Some [competency questions](https://doi.org/10.1007/978-3-031-47262-6_3) for a k
       <td>What objects were accepted by a given actor?</td>
     </tr>
     <tr>
-      <th name="CQ10"><a href="#CQ10">CQ10</a></th>
-      <td>Which actors accepted a given object?</td>
-      <td rowspan="2"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-accept">Accept definition</a>.</td>
+      <td colspan="3">TODO TentativeAccept</td>
+    </tr>
+    <tr>
+      <th name="CQ12"><a href="#CQ12">CQ12</a></th>
+      <td>Which actors added a given object to a specific target?</td>
+      <td rowspan="4"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-add">Add definition</a>.</td>
+    </tr>
+    <tr>
+      <th name="CQ13"><a href="#CQ13">CQ13</a></th>
+      <td>What objects were added by a given actor to a specific target?</td>
+    </tr>
+    <tr>
+      <th name="CQ14"><a href="#CQ14">CQ14</a></th>
+      <td>What targets a given object was added to by a specific actor?</td>
+    </tr>
+    <tr>
+      <th name="CQ15"><a href="#CQ15">CQ15</a></th>
+      <td>Which actors arrived at a specified location?</td>
+      <td rowspan="2"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-arrive">Arrive definition</a>.</td>
+    </tr>
+    <tr>
+      <th name="CQ16"><a href="#CQ16">CQ16</a></th>
+      <td>What are the locations a given actor has arrived?</td>
     </tr>
   </tbody>
 </table>
