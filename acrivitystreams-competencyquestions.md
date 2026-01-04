@@ -94,14 +94,23 @@ Some [competency questions](https://doi.org/10.1007/978-3-031-47262-6_3) for a k
       <th name="CQ16"><a href="#CQ16">CQ16</a></th>
       <td>What are the locations a given actor has arrived?</td>
     </tr>
-        <tr>
-    <th name="CQ17"><a href="#CQ17">CQ17</a></th>
+    <tr>
+      <th name="CQ17"><a href="#CQ17">CQ17</a></th>
       <td>Which actors created a given object?</td>
       <td rowspan="2"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create">Create definition</a>.</td>
     </tr>
     <tr>
       <th name="CQ18"><a href="#CQ18">CQ18</a></th>
       <td>What objects were created by a given actor?</td>
+    </tr>
+    <tr>
+      <th name="CQ19"><a href="#CQ19">CQ19</a></th>
+      <td>Which actors deleted a given object?</td>
+      <td rowspan="2"><a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-delete">Delete definition</a>.</td>
+    </tr>
+    <tr>
+      <th name="CQ18"><a href="#CQ18">CQ18</a></th>
+      <td>What objects were deleted by a given actor?</td>
     </tr>
 
   </tbody>
