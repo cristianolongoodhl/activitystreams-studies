@@ -1,0 +1,15 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id":"c",
+  "type": "OrderedCollection",
+  "orderedItems": [
+    {
+      "id":"o1",
+      "type": "Object"
+    },
+    {
+      "id":"o2",
+      "type": "Link"
+    }
+  ]
+}

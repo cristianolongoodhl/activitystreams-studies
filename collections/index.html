@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Use cases for Activity Streams collections</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../src/styles/bwlight.css">
+	<style>
+		table {border-collapse: collapse}
+		table, th, td { border: solid black}
+		th, td:{vertical-align: middle}
+		pre{background-color: lightblue}
+		.not-compliant{background-color: rgb(255,220,220, .5)}
+	</style>
+</head>
+<body>
+	<h1>Some Use Cases for Activity Streams Collections</h1>
+	<p>In order to clarify the semantics of Activity Streams collections, this page reports some scenarios of Collection objects <code>c</code>, with the chief aim to distinguish setups that are compliant with the specifications (<a href="https://www.w3.org/TR/activitystreams-vocabulary/">Activity Vocabulary</a> and 
+	<a href="https://www.w3.org/TR/activitystreams-core/">Activity Streams</a>) from those that are not.</p>
+	
+	<p>For the scenarions which are recognized as compliant, the expected <em>members</em> of the collection <code>c</code> are reported.</p>
+
+	<p>This page is still <em>in progress</em>, waiting for feedbacks.</p>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>JSON-LD</th>
+				<th>Corresponding Turtle</th>
+				<th>Graphical visualization</th>
+				<th>Compliant?</th>
+				<th><code>c</code> members</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>
+				<a id="UC1" href="#UC1" rel="self">UC1</a>. A generic collection with unordered items.
+			</td>
+			<td>
+				<pre>
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id":"c",
+  "type": "Collection",
+  "items": [
+    {
+      "id":"o1",
+      "type": "Object"
+    },
+    {
+      "id":"o2",
+      "type": "Link"
+    }
+  ]
+}
+				</pre>
+				<p>Download <a href="uc1.jsonld">uc1.jsonld</a>.</p>
+			</td>
+			<td>
+				<pre>
+@prefix as: &lt;https://www.w3.org/ns/activitystreams#&gt; .
+
+&lt;http://example.org/c&gt;
+  a as:Collection ;
+  as:items &lt;http://example.org/o1&gt;, &lt;http://example.org/o2&gt; .
+
+&lt;http://example.org/o1&gt; a as:Object .
+&lt;http://example.org/o2&gt; a as:Link .
+				</pre>	
+				<p>Download <a href="uc1.ttl">uc1.ttl</a>.</p>
+			</td>
+			<td>
+				<img src="uc1.svg">
+			</td>
+			<td>
+				Yes
+			</td>
+			<td>
+				<code>o1</code>, <code>o2</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a id="UC2" href="#UC2" rel="self">UC2</a>. A generic collection with ordered items.
+			</td>
+			<td>
+				<pre>
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id":"c",
+  "type": "Collection",
+  "orderedItems": [
+    {
+      "id":"o1",
+      "type": "Object"
+    },
+    {
+      "id":"o2",
+      "type": "Link"
+    }
+  ]
+}
+				</pre>
+				<p>Download <a href="uc2.jsonld">uc2.jsonld</a>.</p>
+			</td>
+			<td>
+				<pre>
+@prefix as: &lt;https://www.w3.org/ns/activitystreams#&gt; .
+
+&lt;http://example.org/c&gt;
+  a as:Collection ;
+  as:items &lt;http://example.org/o1&gt;, &lt;http://example.org/o2&gt; .
+
+&lt;http://example.org/o1&gt; a as:Object .
+&lt;http://example.org/o2&gt; a as:Link .
+				</pre>
+				<p>Download <a href="uc2.ttl">uc2.ttl</a>.</p>
+			</td>
+			<td>
+				<img src="uc5.svg">
+			</td>
+			<td>
+				Yes
+			</td>
+			<td>
+				<code>o1</code>, <code>o2</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a id="UC3" href="#UC3" rel="self">UC3</a>. A generic collection with both ordered and unordered items.
+			</td>
+			<td>
+				<pre>
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id":"c",
+  "type": "Collection",
+  "orderedItems": [
+    {
+      "id":"o1",
+      "type": "Object"
+    },
+    {
+      "id":"o2",
+      "type": "Link"
+    }
+  ],
+  "items": {
+      "id":"o3",
+      "type": "Object"
+   }
+}
+				</pre>
+				<p>Download <a href="uc3.jsonld">uc3.jsonld</a>.</p>
+			</td>
+			<td>
+				<pre>
+@prefix as: &lt;https://www.w3.org/ns/activitystreams#&gt; .
+
+&lt;http://example.org/c&gt;
+  a as:Collection ;
+  as:items &lt;http://example.org/o3&gt;, (
+   &lt;http://example.org/o1&gt;
+   &lt;http://example.org/o2&gt;
+ ) .
+
+&lt;http://example.org/o3&gt; a as:Object .
+&lt;http://example.org/o1&gt; a as:Object .
+&lt;http://example.org/o2&gt; a as:Link .
+				</pre>
+				<p>Download <a href="uc3.ttl">uc3.ttl</a>.</p>
+			</td>
+			<td>
+				<img src="uc3.svg">
+			</td>
+			<td>
+				Yes
+			</td>
+			<td>
+				<code>o1</code>, <code>o2</code>, <code>o3</code>
+			</td>
+		</tr>
+		<tr class="not-compliant">
+			<td>
+				<a id="UC4" href="#UC4" rel="self">UC4</a>. An ordered collection with unordered items.
+			</td>
+			<td>
+				<pre>
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id":"c",
+  "type": "OrderedCollection",
+  "items": [
+    {
+      "id":"o1",
+      "type": "Object"
+    },
+    {
+      "id":"o2",
+      "type": "Link"
+    }
+  ]
+}
+				</pre>
+				<p>Download <a href="uc4.jsonld">uc4.jsonld</a>.</p>
+			</td>
+			<td>
+				<pre>
+@prefix as: &lt;https://www.w3.org/ns/activitystreams#&gt; .
+
+&lt;http://example.org/c&gt;
+  a as:OrderedCollection ;
+  as:items &lt;http://example.org/o1&gt;, &lt;http://example.org/o2&gt; .
+
+&lt;http://example.org/o1&gt; a as:Object .
+&lt;http://example.org/o2&gt; a as:Link .
+				</pre>
+				<p>Download <a href="uc4.ttl">uc4.ttl</a>.</p>
+			</td>
+			<td>
+				<img src="uc4.svg">
+			</td>
+			<td>
+				No
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a id="UC5" href="#UC5" rel="self">UC5</a>. An ordered collection with ordered items.
+			</td>
+			<td>
+				<pre>
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id":"c",
+  "type": "OrderedCollection",
+  "orderedItems": [
+    {
+      "id":"o1",
+      "type": "Object"
+    },
+    {
+      "id":"o2",
+      "type": "Link"
+    }
+  ]
+}
+				</pre>
+				<p>Download <a href="uc5.jsonld">uc5.jsonld</a>.</p>
+			</td>
+			<td>
+				<pre>
+@prefix as: &lt;https://www.w3.org/ns/activitystreams#&gt; .
+
+&lt;http://example.org/c&gt;
+  a as:OrderedCollection ;
+  as:items (
+   &lt;http://example.org/o1&gt;
+   &lt;http://example.org/o2&gt;
+ ) .
+ 
+&lt;http://example.org/o1&gt; a as:Object .
+&lt;http://example.org/o2&gt; a as:Link .
+				</pre>	
+				<p>Download <a href="uc5.ttl">uc5.ttl</a>.</p>
+			</td>
+			<td>
+				<img src="uc5.svg">
+			</td>
+			<td>
+				Yes
+			</td>
+			<td>
+				<code>o1</code>, <code>o2</code>
+			</td>
+		</tr>
+		<tr class="not-compliant">
+			<td>
+				<a id="UC6" href="#UC6" rel="self">UC6</a>. An ordered collection with both ordered and unordered items.
+			</td>
+			<td>
+				<pre>
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id":"c",
+  "type": "OrderedCollection",
+  "orderedItems": [
+    {
+      "id":"o1",
+      "type": "Object"
+    },
+    {
+      "id":"o2",
+      "type": "Link"
+    }
+  ],
+  "items": {
+      "id":"o3",
+      "type": "Object"
+   }
+}
+				</pre>
+				<p>Download <a href="uc6.jsonld">uc6.jsonld</a>.</p>
+			</td>
+			<td>
+				<pre>
+@prefix as: &lt;https://www.w3.org/ns/activitystreams#&gt; .
+
+&lt;http://example.org/c&gt;
+  a as:OrderedCollection ;
+  as:items &lt;http://example.org/o3&gt;, (
+   &lt;http://example.org/o1&gt;
+   &lt;http://example.org/o2&gt;
+ ) .
+
+&lt;http://example.org/o3&gt; a as:Object .
+&lt;http://example.org/o1&gt; a as:Object .
+&lt;http://example.org/o2&gt; a as:Link .
+				</pre>
+				<p>Download <a href="uc6.ttl">uc6.ttl</a>.</p>
+			</td>
+			<td>
+				<img src="uc6.svg">
+			</td>
+			<td>
+				No
+			</td>
+			<td>
+			</td>
+		</tr>
+
+		</tbody>
+	</table>
+	
+	<h2>Credits</h2>
+	<p>The following software has been used to produce the files provided in use cases:</p>
+	<ul>
+		<li><a href="https://www.easyrdf.org/converter">EasyRDF</a>,</li>
+		<li><a href="https://graphvizonline.net">GraphViz online</a>,</li>
+		<li><a href="https://toolset.mrw.it/html-encoder-decoder.html">HTML encode/decode</a>.</li>
+	</ul>
+</body>
+</html>

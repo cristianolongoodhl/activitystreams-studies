@@ -1,0 +1,12 @@
+@prefix as: <https://www.w3.org/ns/activitystreams#> .
+
+<http://example.org/c>
+  a as:Collection ;
+  as:items <http://example.org/o3>, (
+   <http://example.org/o1>
+   <http://example.org/o2>
+ ) .
+
+<http://example.org/o3> a as:Object .
+<http://example.org/o1> a as:Object .
+<http://example.org/o2> a as:Link .
